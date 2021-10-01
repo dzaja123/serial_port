@@ -34,15 +34,15 @@
 25-пински конектор | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 20 | 22 
 
 ### Објашњење пинова
-##### Излаз TxD (Transmit Data) Слање података
-##### Улаз RxD (Receive Data) Пријем података
-##### Излаз RTS (Request To Send) Захтев за слање
-##### Улаз CTS (Clear To Send) Спремност за слање
-##### Улаз DSR (Data Set Ready) Подаци спремни
-##### -GND (Ground) Минус сигнала
-##### Улаз DCD (Data Carrier Detector) Детектор носиоца података
-##### Излаз DTR (Data Terminal Ready) Уређај спреман
-##### Улаз RI (Ring Indicator) Индикатор звона
+- Излаз TxD (Transmit Data) Слање података
+- Улаз RxD (Receive Data) Пријем података
+- Излаз RTS (Request To Send) Захтев за слање
+- Улаз CTS (Clear To Send) Спремност за слање
+- Улаз DSR (Data Set Ready) Подаци спремни
+- -GND (Ground) Минус сигнала
+- Улаз DCD (Data Carrier Detector) Детектор носиоца података
+- Излаз DTR (Data Terminal Ready) Уређај спреман
+- Улаз RI (Ring Indicator) Индикатор звона
 
 Приказ стансардног ДБ-9 конектора.
 
