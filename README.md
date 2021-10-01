@@ -102,7 +102,7 @@ def send(message):
     
     except KeyboardInterrupt:
             
-        print("Proccess terminated via keyboard.") # povratna informacija o primanju poruke, ispisana u konzoli
+        print("Process terminated via keyboard.") # povratna informacija o primanju poruke, ispisana u konzoli
         serial_port.close() # zatvaranje serisjkog porta
     
     except:
@@ -133,7 +133,7 @@ def receive():
         
         except KeyboardInterrupt:
             
-            print("Proccess terminated via keyboard.") # povratna informacija o prekidu od strane korisnika, ispisana u konzoli
+            print("Process terminated via keyboard.") # povratna informacija o prekidu od strane korisnika, ispisana u konzoli
             serial_port.close() # zatvaranje serisjkog porta
 
         except:
