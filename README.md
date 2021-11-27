@@ -115,12 +115,9 @@ def send(message):
 def receive():
 
     receive = [] # lista za cuvanje primljenih poruka
-    count = 0 # brojac
 
     while True:
-
-        count += 1 # inkrementovanje brojaca
-        
+     
         try:
         
             if serial_port.is_open: # provera da li je serijski port "otvoren"
@@ -128,7 +125,6 @@ def receive():
                 receive.append(serial_port.read()) # primljene poruke se dodaju listi za cuvanje
                 
                 print(f"Message: {receive} successfully received on serial port.") # povratna informacija o primanju poruke, ispisana u konzoli
-                print(f"Counter at: {counter}") # povratna informacija o stanju brojaca      
         
         except KeyboardInterrupt:
             
