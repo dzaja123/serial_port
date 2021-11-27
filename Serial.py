@@ -2,10 +2,11 @@ import serial
 import struct
 import time
 
-serial_port = serial.Serial('/dev/ttyS0', 115200, serial.EIGHTBITS, serial.PARITY_NONE, serial.STOPBITS_ONE) # inicijalizacija serijskog porta na racunaru 
 '''
 koristimo serijski port ttyS0, baudrate komunikacije setujemo na 115200
 '''
+
+serial_port = serial.Serial('/dev/ttyS0', 115200, serial.EIGHTBITS, serial.PARITY_NONE, serial.STOPBITS_ONE) # inicijalizacija serijskog porta na racunaru 
 
 #####################################################
 '''                  Za slanje                    '''
@@ -42,11 +43,8 @@ def send(message):
 def receive():
 
     receive = [] # lista za cuvanje primljenih poruka
-    count = 0 # brojac
 
     while True:
-
-        count += 1 # inkrementovanje brojaca
         
         try:
         
@@ -54,8 +52,7 @@ def receive():
             
                 receive.append(serial_port.read()) # primljene poruke se dodaju listi za cuvanje
                 
-                print(f"Message: {receive} successfully received on serial port.") # povratna informacija o primanju poruke, ispisana u konzoli
-                print(f"Counter at: {counter}") # povratna informacija o stanju brojaca      
+                print(f"Message: {receive} successfully received on serial port.") # povratna informacija o primanju poruke, ispisana u konzoli     
         
         except KeyboardInterrupt:
             
