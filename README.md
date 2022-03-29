@@ -85,54 +85,50 @@ serial_port = serial.Serial('/dev/ttyS0', 115200, serial.EIGHTBITS, serial.PARIT
 ```python
 def send(message):
  
-    message = list(message.split(' ')) # poruka se splituje po zarezu i konvertuje iz string-a u listu
-    sendString = b'' # previks za bajt se dodaje poruci
-    
-    for elem in message:
-        
-        elem = int(elem) # elementi liste se konvertuju u integer
-        sendString += struct.pack('!B', elem) # formatiranje poruka iz liste   
-    
+    if type(message) is not list:
+        message = message.encode()
+ 
     try:
-    
-        serial_port.write(sendString) # slanje komande na serijski port
         
-        print(f"Message: {sendString} successfully sent to serial port.") # povratna informacija o slanju poruke, ispisana u konzoli      
+        serial_port.write(message) # слање поруке на дефинисани КОМ порт
+        
+        print(f"Message: {message} successfully sent to serial port.") # потврдна информација о послатој поруци      
     
     except KeyboardInterrupt:
             
-        print("Process terminated via keyboard.") # povratna informacija o primanju poruke, ispisana u konzoli
-        serial_port.close() # zatvaranje serisjkog porta
+        print("Process terminated via keyboard.") 
+        serial_port.close() # затварање серијског порта
     
     except:
 
-        print("Error while sending message to serial port, check if serial port is connected.") # povratna informacija o prekidu, ispisana u konzoli
-        serial_port.close() # zatvaranje serisjkog porta
+        print("Error while sending message to serial port, check if serial port is connected.")
+        serial_port.close() # затварање серијског порта
 ```
 ### Приказ функције за примање поруке
 
 ```python
 def receive():
 
-    receive = [] # lista za cuvanje primljenih poruka
+    receive = [] # листа за чување примљених порука
 
     while True:
-     
+        
         try:
         
-            if serial_port.is_open: # provera da li je serijski port "otvoren"
+            if serial_port.is_open: # провера да ли је порт отворен
             
-                receive.append(serial_port.read()) # primljene poruke se dodaju listi za cuvanje
+                receive.append(serial_port.read()) # читање порука и смештање у листу
                 
-                print(f"Message: {receive} successfully received on serial port.") # povratna informacija o primanju poruke, ispisana u konzoli
+                print(f"Message: {receive} successfully received on serial port.")   
         
         except KeyboardInterrupt:
             
-            print("Process terminated via keyboard.") # povratna informacija o prekidu od strane korisnika, ispisana u konzoli
-            serial_port.close() # zatvaranje serisjkog porta
+            print("Process terminated via keyboard.") 
+            serial_port.close() # затварање серијског порта
 
         except:
 
             print("Error while reading serial port, check if serial port is connected.")  # povratna informacija o prekidu, ispisana u konzoli
-            serial_port.close() # zatvaranje serisjkog porta
+            serial_port.close() # затварање серијског порта
+
 ```
