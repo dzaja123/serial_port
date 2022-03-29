@@ -88,7 +88,7 @@ serial_port = serial.Serial('COM1', 115200, serial.EIGHTBITS, serial.PARITY_NONE
 ```python
 def send(message):
  
-    if type(message) is not list:
+    if type(message) is str: # уколико је порука типа стринг, енкодује се у низ бајтова
         message = message.encode()
  
     try:
