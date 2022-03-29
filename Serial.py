@@ -12,7 +12,7 @@ serial_port = serial.Serial('/dev/ttyS0', 115200, serial.EIGHTBITS, serial.PARIT
 ##################################################### 
 def send(message):
  
-    if type(message) is not list:
+    if type(message) is str: # уколико је порука типа стринг, енкодује се у низ бајтова
         message = message.encode()
  
     try:
