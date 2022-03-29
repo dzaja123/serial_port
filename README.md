@@ -39,7 +39,7 @@
 - Излаз RTS (Request To Send) Захтев за слање
 - Улаз CTS (Clear To Send) Спремност за слање
 - Улаз DSR (Data Set Ready) Подаци спремни
-- -GND (Ground) Минус сигнала
+- GND (Ground) Минус сигнала
 - Улаз DCD (Data Carrier Detector) Детектор носиоца података
 - Излаз DTR (Data Terminal Ready) Уређај спреман
 - Улаз RI (Ring Indicator) Индикатор звона
@@ -73,7 +73,7 @@ pip install pyserial
 import serial 
 import time
 ```
-Затим се иницијализује серијски порт
+Затим се иницијализује серијски порт, у овом случају порт COM1.
 
 ```python
 # За Linux
