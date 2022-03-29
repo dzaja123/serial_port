@@ -71,13 +71,16 @@ pip install pyserial
 
 ```python
 import serial 
-import struct
 import time
 ```
 Затим се иницијализује серијски порт
 
 ```python
+# За Linux
 serial_port = serial.Serial('/dev/ttyS0', 115200, serial.EIGHTBITS, serial.PARITY_NONE, serial.STOPBITS_ONE)
+
+# За Windows
+serial_port = serial.Serial('COM1', 115200, serial.EIGHTBITS, serial.PARITY_NONE, serial.STOPBITS_ONE)
 ```
 
 ### Приказ функције за слање поруке
