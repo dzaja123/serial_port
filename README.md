@@ -133,7 +133,7 @@ def receive():
 
         except:
 
-            print("Error while reading serial port, check if serial port is connected.")  # povratna informacija o prekidu, ispisana u konzoli
+            print("Error while reading serial port, check if serial port is connected.")  # повратна информација о прекиду, исписана у конзоли
             serial_port.close() # затварање серијског порта
 
 ```
